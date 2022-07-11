@@ -6,12 +6,13 @@
         <th>Orbit Type</th>
         <th>Launch Date</th>
     </tr>
-    <tr class="data-row" *ngFor = "let dataRow of satellites">
-        <td>{{dataRow.name}}</td>
+    <tr class="data-row"  *ngFor ="let dataRow of satellites">
+        <td> {{dataRow.name}}</td>
+        <td [class.warning] = "dataRow.isSpaceDebris()">{{dataRow.type}}</td>
         <td> {{dataRow.type}}</td>
-       <td> {{dataRow.operational}}</td>
-       <td> {{dataRow.orbitType}}</td>
-       <td> {{dataRow.launchDate}}</td>
+        <td> {{dataRow.operational}}</td>
+        <td> {{dataRow.orbitType}}</td>
+        <td> {{dataRow.launchDate}}</td>
     </tr>
 </table>
 
